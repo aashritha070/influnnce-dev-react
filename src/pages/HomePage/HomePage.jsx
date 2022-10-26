@@ -4,26 +4,28 @@ import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Pane, Pill } from "evergreen-ui";
+
 import Navbar from "../../components/Navbar/Navbar.jsx";
 import Header from "../../components/Header/Header.jsx";
-import "./home.css";
+import "./Home.css";
+
+let parse = require('html-react-parser');
 const defaultBlogCoverPic = require("../../static/defaultBlogCoverPic.png");
 
-export default function Home() {
+function Home() {
   const [blogsByTag, setblogsByTag] = useState([]);
   const [allBlogs, setAllBlogs] = useState([]);
   const [allTags, setAllTags] = useState([]);
   const [isload, setIsLoad] = useState(false);
-  const jwtToken = {
-    token: localStorage.getItem("Token"),
-  };
+  const jwtToken = localStorage.getItem("Token")
+
 
   useEffect(() => {
     setIsLoad(true);
     const fetchBlogsByTags = async () => {
       console.log("jwtToken", jwtToken);
       await axios
-        .post("http://localhost:5000/blog/tag", jwtToken)
+        .post("http://localhost:5000/blog/tag", { token: jwtToken })
         .then((res) => {
           if (res.data?.message === "No tags available") {
             return window.location.replace("/tagselect");
@@ -35,11 +37,11 @@ export default function Home() {
           console.log("fetchBlogsByTags", err);
         });
     };
-    fetchBlogsByTags();
+    if (jwtToken) fetchBlogsByTags();
 
     const fetchAllBlogs = async () => {
       await axios
-        .post("http://localhost:5000/blog/all", jwtToken)
+        .post("http://localhost:5000/blog/all")
         .then((res) => {
           console.log("fetchAllBlogs", res);
           setAllBlogs(res.data.data);
@@ -52,7 +54,7 @@ export default function Home() {
 
     const fetchAllTags = async () => {
       await axios
-        .post("http://localhost:5000/tags", jwtToken)
+        .post("http://localhost:5000/tags")
         .then((res) => {
           console.log("fetchAllTags", res);
           setAllTags(res.data.tags);
@@ -93,7 +95,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="home-content">
+        {jwtToken ? (<div className="home-content">
           <span className="home-subtitle">Top picks for you!</span>
           <div className="d-flex gap-5 mt-3">
             {blogsByTag.map((blog) => (
@@ -125,7 +127,7 @@ export default function Home() {
               </Card>
             ))}
           </div>
-        </div>
+        </div>) : (<div></div>)}
         <div className="tag-container">
           <span className="tag-title">Categories</span>
           <div className=" tag-wrapper">
@@ -138,9 +140,9 @@ export default function Home() {
         </div>
         <div className="home-content">
           <span className="home-subtitle">Explore more</span>
-          <div className=" d-flex flex-wrap  gap-5 mt-3">
+          <div className=" d-flex flex-wrap gap-5 mt-3">
             {allBlogs.map((blog) => (
-              <Card style={{ width: "20%" }} className="mb-5">
+              <Card style={{ width: "17%" }} className="mb-4">
                 {blog.coverPic ? (
                   <Card.Img variant="top" src={defaultBlogCoverPic} />
                 ) : (
@@ -156,7 +158,7 @@ export default function Home() {
                   </div>
 
                   <Card.Title className="mt-4">{blog.title}</Card.Title>
-                  <Card.Text>{blog.content}</Card.Text>
+                  <Card.Text>{parse(blog.content)}</Card.Text>
 
                   <a href="/viewpost">
                     <Button variant="primary">read more</Button>
@@ -170,3 +172,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

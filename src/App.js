@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
-import "./main.css";
-import Navbar from "./components/Navbar/Navbar";
+
 import Home from "./pages/HomePage/HomePage.jsx";
 import Login from "./pages/LoginPage/LoginPage.jsx";
 import ViewPost from "./pages/ViewPost/ViewPost.jsx";
@@ -13,6 +12,8 @@ import ProfileSettings from "./pages/ProfilePage/ProfilePage.jsx";
 import PasswordChange from "./pages/PasswordChange/PasswordChange";
 import Tags from "./pages/TagsPage/TagsPage";
 import DeleteUser from "./pages/DeletePage/DeletePage";
+
+import "./main.css";
 
 function App() {
   return (

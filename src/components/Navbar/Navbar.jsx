@@ -4,9 +4,9 @@ import React from "react";
 function Navbar() {
   const token = localStorage.getItem("Token");
 
-  if (!token || token === "undefined") {
-    return (window.location = "/login");
-  }
+  // if (!token || token === "undefined") {
+  //   return (window.location = "/login");
+  // }
 
   const handleLogout = () => {
     localStorage.clear();

@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import {React} from "react";
+import { React } from "react";
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -11,7 +11,7 @@ function Login() {
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
-  
+
   const successToast = () =>
     toast.success("Account Successfully logged in!", {
       position: "top-right",
@@ -58,8 +58,6 @@ function Login() {
     return <Navigate to="/" />;
   }
 
-  
-  
   return (
     <div>
       <ToastContainer />
@@ -88,8 +86,6 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-
-           
 
             <Button className="auth-button" type="submit">
               Login
