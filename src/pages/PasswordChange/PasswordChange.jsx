@@ -1,4 +1,4 @@
-import { Button, Form }from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import "./PasswordChange.css";
 import  Navbar  from "../../components/Navbar/Navbar";
 import { Navigate } from "react-router-dom";
