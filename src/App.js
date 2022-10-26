@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/profile" element={<ProfileSettings />}></Route>
           <Route exact path="/password" element={<PasswordChange />}></Route>
           <Route exact path="/deleteUser" element={<DeleteUser />}></Route>
-          <Route exact path="/view" element={<ViewPost />}></Route>
+          <Route exact path="/view/:id" element={<ViewPost />}></Route>
           <Route
             exact
             path="/blogsview/:key/:value"

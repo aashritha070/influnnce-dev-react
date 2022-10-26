@@ -160,7 +160,7 @@ function Home() {
                   <Card.Title className="mt-4">{blog.title}</Card.Title>
                   <Card.Text>{parse(blog.content)}</Card.Text>
 
-                  <a href="/viewpost">
+                  <a href={`/view/${blog._id}`}>
                     <Button variant="primary">read more</Button>
                   </a>
                 </Card.Body>
