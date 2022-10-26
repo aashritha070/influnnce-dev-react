@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 import { Pane, Pill } from "evergreen-ui";
 import Navbar from "../../components/Navbar/Navbar.jsx";
 import Header from "../../components/Header/Header.jsx";
-import "./home.css";
+import "./Home.css";
 const defaultBlogCoverPic = require("../../static/defaultBlogCoverPic.png");
 
 export default function Home() {
