@@ -1,0 +1,80 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+.heading {
+  height: 70px;
+  font-weight: 600;
+  font-size: 30px;
+  color: var(--highlight);
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+.container-title-tag {
+  margin-left: 10%;
+  color: var(--highlight);
+  font-weight: 500;
+  font-size: 30px;
+}
+Form.Label {
+  height: 60px;
+  width: 150px;
+  border: 1px solid green;
+  position: relative;
+  margin: auto;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+Form.Label:hover {
+  background-color: var(--highlight);
+  color: black;
+}
+Form.Label::after {
+  background-color: var(--highlight);
+}
+.tags-wrapper {
+  background-color: var(--primary);
+  height: 95vh;
+}
+
+.tags-item {
+  display: inline;
+}
+.button {
+  width: 25%;
+  margin-left: 35%;
+}
+.container-content-tag {
+  width: 650px;
+  height: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 50px;
+  margin: 8%;
+  margin-left: 30%;
+}
+
+.home-container-tag Form.Label {
+  width: 200px;
+  padding: 10px;
+  background-color: white;
+  border: solid 2px var(--primary);
+  transition: all 0.3s;
+}
+
+.home-container-tag input[type="radio"] {
+  display: none;
+}
+.tags-select-box-input {
+  display: flex;
+}
+.tags-select-box {
+  margin: 10% 20% 10% 20%;
+}

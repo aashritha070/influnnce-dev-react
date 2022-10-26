@@ -1,0 +1,23 @@
+.container-content-profile {
+  width: 70%;
+  height: auto;
+  background-color: white;
+  border-radius: 12px;
+  padding: 50px;
+}
+
+.home-container-profile {
+  display: flex;
+  font-family: "Inter", sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.container-title-profile {
+  color: var(--highlight);
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 40px;
+  font-size: 30px;
+}

@@ -1,0 +1,114 @@
+.currentPost {
+  flex: 9;
+  min-height: 100%;
+}
+
+.currentViewPost {
+  padding: 20px;
+  
+}
+.blogChanges {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content:right;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 15px;
+}
+.desc {
+  border: none;
+  color: var(--primary);
+  font-size: 18px;
+  line-height: 25px;
+  margin: 20px;
+}
+.postTitleEdit {
+  text-align: center;
+  font-style: italic;
+  font-size: 30px;
+  border: none;
+  color: gray;
+  border-bottom: 1px solid var(--primary);
+  margin-left: 100px;
+}
+.postTitleEdit:focus {
+  outline: none;
+}
+
+.DescriptionEdit {
+  border: none;
+  color: var(--primary);
+  font-size: 18px;
+  width: 100%;
+  line-height: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+.DescriptionEdit:focus {
+  outline: none;
+}
+
+.blogDelete {
+  cursor: pointer;
+  color: red;
+  padding: 10px;
+  font-size: 20px;
+}
+.blogEdit {
+  cursor: pointer;
+  font-weight: bold;
+  color: green;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.viewingImg {
+  width: 100%;
+  height: 300px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.postTitle {
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-style: italic;
+  font-size: 30px;
+}
+
+.CurrentInfo {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16;
+  color: black;
+  margin:15px;
+}
+.saveEdits {
+  position: absolute;
+  top: 400px;
+  right: 50px;
+  color: white;
+  background-color: rgb(139, 139, 225);
+  padding: 10px 10px 10px 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.tags{
+  margin-left: 30px;
+}
+
+.postTags{
+  display: inline;
+  margin: 10px;
+  margin-left: 10px;
+  font-style: italic;
+
+  
+}
